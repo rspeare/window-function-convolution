@@ -39,6 +39,7 @@ class wjField:
                kernels be set explicitly to zero? If so, opt for "true".
 
         """
+        self.Length=2400.0 # Length of the survey
         self.step=step
         self.Ngrid=Ngrid
         self.Nmax=Nmax
@@ -49,7 +50,8 @@ class wjField:
         self.p=((np.sqrt(self.kx[:,None,None]**2+self.kx[None,:,None]**2+self.kx[None,None,:]**2))).astype(float)
         self.pbinned=self.bin_radius(self.p)
         self.Nk=np.bincount(self.pbinned.ravel()) # number of grid cells in each shell bin
-        
+
+
         # Set Kernels to zero outside kmin and kmax
         self.bound=bound
         print('Boundary='+str(self.Boundary))
@@ -229,9 +231,11 @@ class wjField:
         we need to convolve the kernels with the square modulus of the 
         window function. 
 
-        RETURNS CONVOLUTION OF THE MODULUS
+        RETURNS CONVOLUTION OF THE MODULUS, what we might call -- for the
+        power spectrum -- the w_j fields:
 
-        \int dq A_j(q) W(k-q)^2
+        w_j(k) = \int dq A_j(q) W(k-q)^2
+
         """
         self.G=np.zeros((self.jmax-self.jmin+1,self.jmax-self.jmin+1))
         W=np.fft.ifftn(self.Wx)
