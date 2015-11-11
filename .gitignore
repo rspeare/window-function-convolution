@@ -1,0 +1,7 @@
+**/*~
+**/*.ipynb
+**/*.pickle
+__pycache__
+profile*
+**/*f90
+**/*so
