@@ -1,7 +1,8 @@
-**/*~
-**/*.ipynb
-**/*.pickle
-__pycache__
-profile*
-**/*f90
-**/*so
+# iPython Notebooks and Pickle files
+*.ipynb
+*.pickle
+*~
+*so
+*f90
+
+
