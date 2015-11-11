@@ -4,4 +4,6 @@ This set of python routines prepares something I call the G-matrix, which conver
 Given an initial set of observed Power Spectrum values, at discrete k bins, $\lbrace P_k \rbrace_{k=k_\mathrm{min}}^{k_\mathrm{max}}$, one gets
 the convolved Power Spectrum values by contracting against the matrix $G_{k,q}$. 
 
+The Estimator.py file calculates the power spectrum and Bispectrum of a given Fortran Density field in k-space.
+
 
