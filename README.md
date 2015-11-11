@@ -1,9 +1,18 @@
 # Window-function-convolution
 
-This set of python routines prepares something I call the G-matrix, which converts unconvolved Power Spectra to Convolved Power Spectra.
-Given an initial set of observed Power Spectrum values, at discrete k bins, $\lbrace P_k \rbrace_{k=k_\mathrm{min}}^{k_\mathrm{max}}$, one gets
-the convolved Power Spectrum values by contracting against the matrix $G_{k,q}$. 
+This is a set of python routines to do the following things:
 
-The Estimator.py file calculates the power spectrum and Bispectrum of a given Fortran Density field in k-space.
+(1) regressor.py
+
+Uses Gaussian Process framework with a very limited number of kernels to interpolate a given function -- or stochastic process -- sampled at discrete input output pairs.
+
+(2) wjField.py
+
+Uses Gaussian Process Kernels -- once again, a very limited number -- to convolve with some given Window function such that a convolved Gaussian process
+can be interpolated and/or defined. 
+
+(3) Estimator.py
+
+A very fast Power Spectrum and Bispectrum Estimator, written in python. 
 
 
